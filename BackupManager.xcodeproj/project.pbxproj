@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37F44EDF158022AE00DDE804 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44EDE158022AE00DDE804 /* UIKit.framework */; };
+		37F44EE1158022AE00DDE804 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44EE0158022AE00DDE804 /* Foundation.framework */; };
+		37F44EE3158022AE00DDE804 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44EE2158022AE00DDE804 /* CoreGraphics.framework */; };
+		37F44EE5158022AE00DDE804 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44EE4158022AE00DDE804 /* CoreData.framework */; };
+		37F44EEB158022AE00DDE804 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37F44EE9158022AE00DDE804 /* InfoPlist.strings */; };
+		37F44EED158022AE00DDE804 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F44EEC158022AE00DDE804 /* main.m */; };
+		37F44EF1158022AE00DDE804 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F44EF0158022AE00DDE804 /* AppDelegate.m */; };
+		37F44EF4158022AE00DDE804 /* BackupManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37F44EF2158022AE00DDE804 /* BackupManager.xcdatamodeld */; };
+		37F44EFC158022CA00DDE804 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F44EFB158022CA00DDE804 /* View.m */; };
+		37F44EFF158022E100DDE804 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F44EFE158022E100DDE804 /* ViewController.m */; };
+		37F44F011580230E00DDE804 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44F001580230E00DDE804 /* DropboxSDK.framework */; };
+		37F44F041580232D00DDE804 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44F021580232D00DDE804 /* QuartzCore.framework */; };
+		37F44F051580232D00DDE804 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44F031580232D00DDE804 /* Security.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		37F44EDA158022AE00DDE804 /* BackupManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackupManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F44EDE158022AE00DDE804 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		37F44EE0158022AE00DDE804 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		37F44EE2158022AE00DDE804 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		37F44EE4158022AE00DDE804 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		37F44EE8158022AE00DDE804 /* BackupManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BackupManager-Info.plist"; sourceTree = "<group>"; };
+		37F44EEA158022AE00DDE804 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37F44EEC158022AE00DDE804 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		37F44EEE158022AE00DDE804 /* BackupManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackupManager-Prefix.pch"; sourceTree = "<group>"; };
+		37F44EEF158022AE00DDE804 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		37F44EF0158022AE00DDE804 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		37F44EF3158022AE00DDE804 /* BackupManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BackupManager.xcdatamodel; sourceTree = "<group>"; };
+		37F44EFA158022CA00DDE804 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		37F44EFB158022CA00DDE804 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
+		37F44EFD158022E100DDE804 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		37F44EFE158022E100DDE804 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		37F44F001580230E00DDE804 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = BackupManager/DropboxSDK.framework; sourceTree = "<group>"; };
+		37F44F021580232D00DDE804 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		37F44F031580232D00DDE804 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37F44ED7158022AE00DDE804 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F44F041580232D00DDE804 /* QuartzCore.framework in Frameworks */,
+				37F44F051580232D00DDE804 /* Security.framework in Frameworks */,
+				37F44EDF158022AE00DDE804 /* UIKit.framework in Frameworks */,
+				37F44EE1158022AE00DDE804 /* Foundation.framework in Frameworks */,
+				37F44EE3158022AE00DDE804 /* CoreGraphics.framework in Frameworks */,
+				37F44EE5158022AE00DDE804 /* CoreData.framework in Frameworks */,
+				37F44F011580230E00DDE804 /* DropboxSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37F44ECF158022AE00DDE804 = {
+			isa = PBXGroup;
+			children = (
+				37F44EE6158022AE00DDE804 /* BackupManager */,
+				37F44EDD158022AE00DDE804 /* Frameworks */,
+				37F44EDB158022AE00DDE804 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37F44EDB158022AE00DDE804 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37F44EDA158022AE00DDE804 /* BackupManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37F44EDD158022AE00DDE804 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37F44F021580232D00DDE804 /* QuartzCore.framework */,
+				37F44F031580232D00DDE804 /* Security.framework */,
+				37F44F001580230E00DDE804 /* DropboxSDK.framework */,
+				37F44EDE158022AE00DDE804 /* UIKit.framework */,
+				37F44EE0158022AE00DDE804 /* Foundation.framework */,
+				37F44EE2158022AE00DDE804 /* CoreGraphics.framework */,
+				37F44EE4158022AE00DDE804 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37F44EE6158022AE00DDE804 /* BackupManager */ = {
+			isa = PBXGroup;
+			children = (
+				37F44EEF158022AE00DDE804 /* AppDelegate.h */,
+				37F44EF0158022AE00DDE804 /* AppDelegate.m */,
+				37F44EFD158022E100DDE804 /* ViewController.h */,
+				37F44EFE158022E100DDE804 /* ViewController.m */,
+				37F44EFA158022CA00DDE804 /* View.h */,
+				37F44EFB158022CA00DDE804 /* View.m */,
+				37F44EF2158022AE00DDE804 /* BackupManager.xcdatamodeld */,
+				37F44EE7158022AE00DDE804 /* Supporting Files */,
+			);
+			path = BackupManager;
+			sourceTree = "<group>";
+		};
+		37F44EE7158022AE00DDE804 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37F44EE8158022AE00DDE804 /* BackupManager-Info.plist */,
+				37F44EE9158022AE00DDE804 /* InfoPlist.strings */,
+				37F44EEC158022AE00DDE804 /* main.m */,
+				37F44EEE158022AE00DDE804 /* BackupManager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37F44ED9158022AE00DDE804 /* BackupManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37F44EF7158022AE00DDE804 /* Build configuration list for PBXNativeTarget "BackupManager" */;
+			buildPhases = (
+				37F44ED6158022AE00DDE804 /* Sources */,
+				37F44ED7158022AE00DDE804 /* Frameworks */,
+				37F44ED8158022AE00DDE804 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BackupManager;
+			productName = BackupManager;
+			productReference = 37F44EDA158022AE00DDE804 /* BackupManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37F44ED1158022AE00DDE804 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Walsh walsh Studio";
+			};
+			buildConfigurationList = 37F44ED4158022AE00DDE804 /* Build configuration list for PBXProject "BackupManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 37F44ECF158022AE00DDE804;
+			productRefGroup = 37F44EDB158022AE00DDE804 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37F44ED9158022AE00DDE804 /* BackupManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37F44ED8158022AE00DDE804 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F44EEB158022AE00DDE804 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37F44ED6158022AE00DDE804 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F44EED158022AE00DDE804 /* main.m in Sources */,
+				37F44EF1158022AE00DDE804 /* AppDelegate.m in Sources */,
+				37F44EF4158022AE00DDE804 /* BackupManager.xcdatamodeld in Sources */,
+				37F44EFC158022CA00DDE804 /* View.m in Sources */,
+				37F44EFF158022E100DDE804 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		37F44EE9158022AE00DDE804 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37F44EEA158022AE00DDE804 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37F44EF5158022AE00DDE804 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37F44EF6158022AE00DDE804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37F44EF8158022AE00DDE804 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BackupManager\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BackupManager/BackupManager-Prefix.pch";
+				INFOPLIST_FILE = "BackupManager/BackupManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		37F44EF9158022AE00DDE804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BackupManager\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BackupManager/BackupManager-Prefix.pch";
+				INFOPLIST_FILE = "BackupManager/BackupManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37F44ED4158022AE00DDE804 /* Build configuration list for PBXProject "BackupManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F44EF5158022AE00DDE804 /* Debug */,
+				37F44EF6158022AE00DDE804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37F44EF7158022AE00DDE804 /* Build configuration list for PBXNativeTarget "BackupManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F44EF8158022AE00DDE804 /* Debug */,
+				37F44EF9158022AE00DDE804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		37F44EF2158022AE00DDE804 /* BackupManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				37F44EF3158022AE00DDE804 /* BackupManager.xcdatamodel */,
+			);
+			currentVersion = 37F44EF3158022AE00DDE804 /* BackupManager.xcdatamodel */;
+			path = BackupManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 37F44ED1158022AE00DDE804 /* Project object */;
+}
