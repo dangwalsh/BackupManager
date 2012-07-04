@@ -10,9 +10,13 @@
 
 @interface View : UIView {
     UIButton *linkButton;
+    UIButton *unlinkButton;
     UIButton *upButton;
-    UIButton *listButton;
+    UIButton *purgeButton;
     UIButton *downButton;
+    UIButton *deleteButton;
+    UIDatePicker *datePicker;
+    NSDateFormatter *dateFormatter;
 }
 
 @end

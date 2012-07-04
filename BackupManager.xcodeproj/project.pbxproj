@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3748A79915A10A14005C462E /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3748A79815A10A14005C462E /* TableViewController.m */; };
+		3748A79D15A10E85005C462E /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 3748A79C15A10E85005C462E /* File.m */; };
+		374E310615A1D05E003C3277 /* Files.m in Sources */ = {isa = PBXBuildFile; fileRef = 374E310515A1D05E003C3277 /* Files.m */; };
 		37F44EDF158022AE00DDE804 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44EDE158022AE00DDE804 /* UIKit.framework */; };
 		37F44EE1158022AE00DDE804 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44EE0158022AE00DDE804 /* Foundation.framework */; };
 		37F44EE3158022AE00DDE804 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F44EE2158022AE00DDE804 /* CoreGraphics.framework */; };
@@ -23,6 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3748A79715A10A14005C462E /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		3748A79815A10A14005C462E /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		3748A79B15A10E85005C462E /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		3748A79C15A10E85005C462E /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
+		374E310415A1D05E003C3277 /* Files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Files.h; sourceTree = "<group>"; };
+		374E310515A1D05E003C3277 /* Files.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Files.m; sourceTree = "<group>"; };
 		37F44EDA158022AE00DDE804 /* BackupManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackupManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F44EDE158022AE00DDE804 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		37F44EE0158022AE00DDE804 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,8 +109,14 @@
 				37F44EF0158022AE00DDE804 /* AppDelegate.m */,
 				37F44EFD158022E100DDE804 /* ViewController.h */,
 				37F44EFE158022E100DDE804 /* ViewController.m */,
+				3748A79715A10A14005C462E /* TableViewController.h */,
+				3748A79815A10A14005C462E /* TableViewController.m */,
 				37F44EFA158022CA00DDE804 /* View.h */,
 				37F44EFB158022CA00DDE804 /* View.m */,
+				3748A79B15A10E85005C462E /* File.h */,
+				3748A79C15A10E85005C462E /* File.m */,
+				374E310415A1D05E003C3277 /* Files.h */,
+				374E310515A1D05E003C3277 /* Files.m */,
 				37F44EF2158022AE00DDE804 /* BackupManager.xcdatamodeld */,
 				37F44EE7158022AE00DDE804 /* Supporting Files */,
 			);
@@ -186,6 +201,9 @@
 				37F44EF4158022AE00DDE804 /* BackupManager.xcdatamodeld in Sources */,
 				37F44EFC158022CA00DDE804 /* View.m in Sources */,
 				37F44EFF158022E100DDE804 /* ViewController.m in Sources */,
+				3748A79915A10A14005C462E /* TableViewController.m in Sources */,
+				3748A79D15A10E85005C462E /* File.m in Sources */,
+				374E310615A1D05E003C3277 /* Files.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +279,7 @@
 				GCC_PREFIX_HEADER = "BackupManager/BackupManager-Prefix.pch";
 				INFOPLIST_FILE = "BackupManager/BackupManager-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -276,6 +295,7 @@
 				GCC_PREFIX_HEADER = "BackupManager/BackupManager-Prefix.pch";
 				INFOPLIST_FILE = "BackupManager/BackupManager-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -299,6 +319,7 @@
 				37F44EF9158022AE00DDE804 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

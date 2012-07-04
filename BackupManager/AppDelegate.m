@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "TableViewController.h"
 #import <DropboxSDK/DropboxSDK.h>
 
 @implementation AppDelegate
@@ -16,13 +17,29 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    path = @"/";
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
+    //self.window.backgroundColor = [UIColor whiteColor];
+    //self.window.rootViewController = [[ViewController alloc] initWithNibName:nil bundle:nil];    
+    //self.window.rootViewController = [[TableViewController alloc] initWithNibName:nil bundle:nil];
+    
+    tableViewController = [[TableViewController alloc]
+                                                initWithStyle:UITableViewStylePlain];  
+    //self.window.rootViewController = tableViewController;
+    NSManagedObjectContext *context = [self managedObjectContext];
+    if (!context) {
+        // Handle the error.
+    }
+    // Pass the managed object context to the view controller. 
+    tableViewController.managedObjectContext = context;
+    UINavigationController *aNavigationController = [[UINavigationController alloc]
+                                                     initWithRootViewController:tableViewController];
+    self.navigationController = aNavigationController;
     
     DBSession* dbSession =
     [[DBSession alloc]
@@ -32,14 +49,22 @@
 
     [DBSession setSharedSession:dbSession];
     
+    [self.window addSubview:[navigationController view]];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
 - (void)didPressLink {
     if (![[DBSession sharedSession] isLinked]) {
         [[DBSession sharedSession] linkFromController:self.window.rootViewController];
+        NSLog(@"Connected!");
     }
+}
+
+- (void)didPressUnlink {
+    [[DBSession sharedSession] unlinkAll];
+    NSLog(@"Disconnected!");
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
@@ -63,6 +88,7 @@
     return restClient;
 }
 
+//uploading a file
 - (void) uploadFile {
     NSString *localPath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
     NSString *filename = @"Info.plist";
@@ -81,10 +107,13 @@
     NSLog(@"File upload failed with error - %@", error);
 }
 
+
+//listing a dropbox directory
 - (void) listFiles {
     [[self restClient] loadMetadata:@"/"];
 }
 
+/*
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
     if (metadata.isDirectory) {
         NSLog(@"Folder '%@' contains:", metadata.path);
@@ -93,15 +122,62 @@
         }
     }
 }
+*/
 
-- (void)restClient:(DBRestClient *)client
-loadMetadataFailedWithError:(NSError *)error {
-    
+- (void) valueChanged:(id) sender {
+    UIDatePicker *picker = sender;
+    deleteDate = picker.date;
+    NSLog(@"date: %@", deleteDate);
+}
+
+- (void) getAllFiles {
+    [[self restClient] loadMetadata: path];
+}
+
+- (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
+    if (metadata.isDirectory) {
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"]; 
+
+        for (DBMetadata *f in metadata.contents) {
+            if (!f.isDirectory) {
+                //NSComparisonResult result = [deleteDate compare:file.lastModifiedDate];
+                NSDate *d = [dateFormatter dateFromString:@"2012-06-29"];
+                NSComparisonResult result = [d compare:f.lastModifiedDate];
+                if(result == NSOrderedDescending){
+                    NSString *path = [f.path stringByAppendingString:f.filename];
+                    NSString *name = f.filename;
+                    NSDate *date = f.lastModifiedDate;
+                    
+                    [tableViewController addFile:name];
+                    
+                    //perhaps here we want to add to filesArray
+                    NSLog(@"\t%@", path);
+                    NSLog(@"\t%@", [dateFormatter stringFromDate:date]);
+                    NSLog(@"\t%@", [dateFormatter stringFromDate:d]);
+                }
+            }
+            else {
+                path = f.path;
+                [self getAllFiles];
+            }
+        }
+    }
+}
+
+- (void)restClient:(DBRestClient *)client loadMetadataFailedWithError:(NSError *)error {
     NSLog(@"Error loading metadata: %@", error);
 }
 
+
+//download a file
 - (void) downloadFile {
-    //[[self restClient] loadFile:dropboxPath intoPath:localPath];
+    NSString *dropboxPath = @"/Info.plist";
+    NSString *localPath = @"/Users/dan/Desktop/DropboxTest/Info.plist";
+    [[self restClient] loadFile:dropboxPath intoPath:localPath];
 }
 
 - (void)restClient:(DBRestClient*)client loadedFile:(NSString*)localPath {
@@ -109,7 +185,18 @@ loadMetadataFailedWithError:(NSError *)error {
 }
 
 - (void)restClient:(DBRestClient*)client loadFileFailedWithError:(NSError*)error {
-    NSLog(@"There was an error loading the file - %@", error);
+  NSLog(@"There was an error loading the file - %@", error);
+}
+
+//delete a file
+- (void) deleteFile {
+    NSString *dropboxPath = @"/Info.plist";
+    [[self restClient] deletePath:dropboxPath];
+}
+
+//purge files
+- (void) purgeFile:(NSString *) path {
+    [[self restClient] deletePath:path];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
